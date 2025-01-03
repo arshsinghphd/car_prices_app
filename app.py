@@ -13,7 +13,7 @@ st.markdown(html_temp,unsafe_allow_html=True)
 
 # Variables 
 year=st.sidebar.selectbox("Select year of the car:",(2016,2017,2018,2019))
-age = year - 2016
+age = 2019 - year
 weight=st.sidebar.slider("Weight of car", 800,2400, step=100)
 hp=st.sidebar.slider("Car engine horse power:", 50, 150, step=10)
 displacement=st.sidebar.slider("Displacement of car:", 800, 3000, step=50)
@@ -31,8 +31,8 @@ warr=st.sidebar.slider("Months of warranty", 0,72, step=3)
 
 
 # confirm entries with user
-conf = {"Age (Years)": age,
-        "Weight (Kg)": weight,
+conf = {"Age (Yrs)": age,
+        "Wt (Kg)": weight,
         "HP": hp,
         "Disp. (cc)":displacement,
         "Cons. (comb)":consumption_comb,
