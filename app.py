@@ -29,16 +29,16 @@ co2_emission=st.sidebar.slider("Carbon dioxide emission (CO2/km):", 0, 200, step
 gearing_type=st.sidebar.radio('Select gear type',('Manual','Not Manual'))
 gearing_type_manual = 1*(gearing_type=='Manual')
 new_used=st.sidebar.selectbox("Select condition of the car", ("New", "Used"))
-prev_owner = "0"
+prev_owner = 0
 if new_used == "Used":
-    prev_owner=st.sidebar.selectbox("Select no. of previous owners", ("1", "more than one"))
-prev_owner_1=1*(prev_owner=="1")
+    prev_owner=st.sidebar.slider("Select no. of previous owners", 0, 4, step=1)
 km=st.sidebar.slider("Km on car odometer", 0,250000, step=1000)
 warr=st.sidebar.slider("Months of warranty", 0,72, step=3)
 
 
 # confirm entries with user
-conf = {"Age (Yrs)": age,
+conf = {"Make":make_model,
+        "Age (Yrs)": age,
         "Wt (Kg)": weight,
         "HP": hp,
         "Disp. (cc)":displacement,
@@ -67,7 +67,7 @@ pred = {'age': age,
  'warranty_mo': warr,
  'weight': weight,
  'gearing_type_manual': gearing_type_manual,
- 'prev_owner_1':prev_owner_1
+ 'prev_owner':prev_owner
         }
 df = pd.DataFrame.from_dict([pred])
 
