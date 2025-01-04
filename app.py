@@ -58,7 +58,8 @@ st.subheader("Press predict if configuration is okay")
 
 
 # Data frame for prediction
-pred = {'age': age,
+pred = {'make_model': make_model,
+ 'age': age,
  'co2_emission':co2_emission,
  'consumption_comb': consumption_comb,
  'displacement': displacement,
