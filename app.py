@@ -10,8 +10,15 @@ html_temp = """
 </div>"""
 st.markdown(html_temp,unsafe_allow_html=True)
 
-
-# Variables 
+# Variables
+make_model = st.sidebar.selectbox("Select make of the car:",
+('audi_a3',
+ 'audi_a1',
+ 'opel_insignia',
+ 'opel_astra',
+ 'opel_corsa',
+ 'renault_clio',
+ 'renault_espace'))
 year=st.sidebar.selectbox("Select year of the car:",(2016,2017,2018,2019))
 age = year - 2016
 weight=st.sidebar.slider("Weight of car", 800,2400, step=100)
