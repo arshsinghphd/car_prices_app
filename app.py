@@ -77,4 +77,5 @@ df = pd.DataFrame.from_dict([pred])
 model=pickle.load(open("model.pkl","rb"))
 if st.button("Predict"):
     prediction = model.predict(df)
-    st.success("The estimated price of your car is €{}.".format(int(prediction[0])))
+    st.success("The estimated price of your car is €{} +/- {}.".format(
+                             int(prediction[0]), int(0.0936*prediction[0])))
